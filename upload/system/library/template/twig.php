@@ -36,6 +36,7 @@ final class Twig {
 
 		// 2. Initiate Twig Environment
 		$twig = new \Twig_Environment(new \Twig_Loader_Filesystem(DIR_TEMPLATE), $config);
+		$twig->addExtension(new \Twig_Extension_Debug());
 
 		// 3. Create an anonymous cache class as twig will not all us to generate a key based on custom keys
 		if ($cache) {
